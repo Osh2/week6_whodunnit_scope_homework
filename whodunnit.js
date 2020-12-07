@@ -48,18 +48,39 @@
 
 // //PREDICTION first verdict = Mrs. Peacock | second verdict = Professor Plum - The first verdict will correctly change the let murderer variable to Mrs Peacock. The second verdict will only refer to the original value for the murderer because the scope of the change is only within the function
 
-// EPISODE 4 - HALLOWEEN SPECIAL (guest staring Steven Seagal)
-let suspectOne = 'Miss Scarlet';
-let suspectTwo = 'Professor Plum';
-let suspectThree = 'Mrs. Peacock';
+// // EPISODE 4 - HALLOWEEN SPECIAL (guest staring Steven Seagal)
+// let suspectOne = 'Miss Scarlet';
+// let suspectTwo = 'Professor Plum';
+// let suspectThree = 'Mrs. Peacock';
 
-const declareAllSuspects = function() {
-  let suspectThree = 'Colonel Mustard';
-  return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
-}
+// const declareAllSuspects = function() {
+//   let suspectThree = 'Colonel Mustard';
+//   return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
+// }
 
-const suspects = declareAllSuspects();
-console.log(suspects);
-console.log(`Suspect three is ${suspectThree}.`);
+// const suspects = declareAllSuspects();
+// console.log(suspects);
+// console.log(`Suspect three is ${suspectThree}.`);
 
-//PREDICTION - Mrs. Peacock - Even though the function changed the name of suspect 3, the scope of that new variable doesn't extend outside the function and suspects variable, which isnt being called in the console.log
+// //PREDICTION - Mrs. Peacock - Even though the function changed the name of suspect 3, the scope of that new variable doesn't extend outside the function and suspects variable, which isnt being called in the console.log
+
+//EPISODE 5 - THE ONE WITH THE BIG KNIFE
+const scenario = {
+    murderer: 'Miss Scarlet',
+    room: 'Kitchen',
+    weapon: 'Candle Stick'
+  };
+  
+  const changeWeapon = function(newWeapon) {
+    scenario.weapon = newWeapon;
+  }
+  
+  const declareWeapon = function() {
+    return `The weapon is the ${scenario.weapon}.`;
+  }
+  
+  changeWeapon('Revolver');
+  const verdict = declareWeapon();
+  console.log(verdict);
+
+//PREDICTION - Revolver - The 2 functions written will successfully change the value under the weapon key and call the new value
