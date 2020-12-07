@@ -64,23 +64,46 @@
 
 // //PREDICTION - Mrs. Peacock - Even though the function changed the name of suspect 3, the scope of that new variable doesn't extend outside the function and suspects variable, which isnt being called in the console.log
 
-//EPISODE 5 - THE ONE WITH THE BIG KNIFE
-const scenario = {
-    murderer: 'Miss Scarlet',
-    room: 'Kitchen',
-    weapon: 'Candle Stick'
-  };
+// //EPISODE 5 - THE ONE WITH THE BIG KNIFE
+// const scenario = {
+//     murderer: 'Miss Scarlet',
+//     room: 'Kitchen',
+//     weapon: 'Candle Stick'
+//   };
   
-  const changeWeapon = function(newWeapon) {
-    scenario.weapon = newWeapon;
-  }
+//   const changeWeapon = function(newWeapon) {
+//     scenario.weapon = newWeapon;
+//   }
   
-  const declareWeapon = function() {
-    return `The weapon is the ${scenario.weapon}.`;
-  }
+//   const declareWeapon = function() {
+//     return `The weapon is the ${scenario.weapon}.`;
+//   }
   
-  changeWeapon('Revolver');
-  const verdict = declareWeapon();
-  console.log(verdict);
+//   changeWeapon('Revolver');
+//   const verdict = declareWeapon();
+//   console.log(verdict);
 
-//PREDICTION - Revolver - The 2 functions written will successfully change the value under the weapon key and call the new value
+// //PREDICTION - Revolver - The 2 functions written will successfully change the value under the weapon key and call the new value
+
+//EPISODE 6 - THE RETURN OF KUNG-FOO DEREK (guest staring Steven Seagal)
+let murderer = 'Colonel Mustard';
+
+const changeMurderer = function() {
+  murderer = 'Mr. Green';
+
+  const plotTwist = function() {
+    murderer = 'Mrs. White';
+  }
+
+  plotTwist();
+}
+
+const declareMurderer = function () {
+  return `The murderer is ${murderer}.`;
+}
+
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
+
+//PREDICTION - Colonel Mustard - the changeMurderer and plotTwist functions do not have scope to cover the const variable verdict XX WRONGO - Should be Mrs White because the let variable is correctly modified in the function and has global scope
